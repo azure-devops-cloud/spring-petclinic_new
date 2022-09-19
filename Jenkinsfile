@@ -1,14 +1,10 @@
-#!groovy
 pipeline {
-	agent { docker { image 'venkybhupathi14/maven:3.5.0' } }
-  stages {
-  	stage('build') {
-    	environment {
-                  HOME="."
-        }        
-      steps {
-      	sh 'mvn install'
-      }
+    agent { docker { image 'maven:3.8.4-openjdk-11-slim' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
     }
-  }
 }
