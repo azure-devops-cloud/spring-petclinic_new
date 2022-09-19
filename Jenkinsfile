@@ -3,11 +3,12 @@ pipeline {
 	agent any
   stages {
   	stage('Maven Install') {
-    	agent {
-      	docker {
-                environment {
+    	environment {
                   HOME="."
-                }
+        }
+        agent {
+      	docker {
+                
         	image 'venkybhupathi14/maven:3.5.0'
         }
       }
