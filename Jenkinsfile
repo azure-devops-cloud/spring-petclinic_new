@@ -5,8 +5,7 @@ pipeline {
   	stage('Maven Install') {
     	agent {
       	docker {
-        	IMAGE='venkybhupathi14/maven'
-                TAG='3.5.0'
+        	image 'venkybhupathi14/maven:3.5.0'
         }
       }
       steps {
